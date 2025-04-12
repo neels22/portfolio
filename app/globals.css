@@ -20,7 +20,6 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply font-sans antialiased text-foreground;
+  background: linear-gradient(to bottom right, hsl(220, 20%, 95%), hsl(240, 20%, 85%));
 }
