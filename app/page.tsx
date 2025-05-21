@@ -13,25 +13,25 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Project Alpha",
+    title: "BookIt",
     description:
-      "A responsive web application with real-time data visualization",
-    tags: ["React", "TypeScript", "D3.js"],
+      "Restaurant tablebooking platform",
+    tags: ["React", "Next-js", "Tailwind-css","springboot","mongodb"],
     link: "#",
     image: "",
   },
   {
-    title: "Project Beta",
+    title: "Eventure",
     description:
-      "Mobile-first e-commerce platform with integrated payment system",
-    tags: ["React Native", "Node.js", "Stripe"],
+      "Event management platform for creating and managing events and booking tickets",
+    tags: ["Next-js", "Springboot", "Paypal"],
     link: "#",
     image: "",
   },
   {
-    title: "Project Gamma",
-    description: "AI-powered content management system for digital agencies",
-    tags: ["Next.js", "Python", "TensorFlow"],
+    title: "Inventory Management System",
+    description: "Inventory management system for a company",
+    tags: ["Next-js", "Tailwind-css","Fastapi","PostgreSQL"],
     link: "#",
     image: "",
   },
