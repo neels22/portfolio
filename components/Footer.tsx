@@ -1,17 +1,19 @@
-
 import { ArrowUpRight, Twitter, Linkedin, Github } from 'lucide-react';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
     <footer className="flex flex-col md:flex-row justify-between items-start md:items-center p-6 bg-white/70 backdrop-blur-md border border-neutral-200 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md animate-fade-in animate-delay-500">
       <div className="mb-4 md:mb-0">
-        <div className="flex items-center gap-2">
-          <h2 className="text-xl font-semibold text-neutral-900">Blog</h2>
-          <ArrowUpRight className="w-4 h-4 text-neutral-500" />
-        </div>
-        <p className="text-sm text-neutral-600 mt-1">
-          Thoughts on software, design and leadership
-        </p>
+        <Link href="/blog" className="group">
+          <div className="flex items-center gap-2">
+            <h2 className="text-xl font-semibold text-neutral-900 group-hover:text-neutral-700">Blog</h2>
+            <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-neutral-700" />
+          </div>
+          <p className="text-sm text-neutral-600 mt-1">
+            Thoughts on software, design and leadership
+          </p>
+        </Link>
       </div>
       <div className="flex gap-3">
         <a
