@@ -19,6 +19,13 @@ export default function AdminPage() {
     tags: '',
   })
 
+  const handleLogout = () => {
+    // Remove the auth cookie
+    document.cookie = 'auth=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'
+    toast.success('Logged out successfully')
+    router.push('/login')
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
@@ -55,8 +62,17 @@ export default function AdminPage() {
 
   return (
     <div className="container mx-auto py-8">
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold">Create New Blog Post</h1>
+        <Button 
+          variant="outline" 
+          onClick={handleLogout}
+          className="text-red-600 hover:text-red-700 hover:bg-red-50"
+        >
+          Logout
+        </Button>
+      </div>
       <Card className="p-6">
-        <h1 className="text-2xl font-bold mb-6">Create New Blog Post</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <Label htmlFor="title">Title</Label>

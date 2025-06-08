@@ -11,22 +11,21 @@ const isAuthenticated = (request: NextRequest) => {
 }
 
 export function middleware(request: NextRequest) {
-  // Protect admin routes
+  // Check if the request is for the admin route
   if (request.nextUrl.pathname.startsWith('/blog/admin')) {
-    if (!isAuthenticated(request)) {
-      try {
-        const loginUrl = new URL('/login', request.url)
-        return NextResponse.redirect(loginUrl)
-      } catch (error) {
-        // Fallback to a simple string concatenation if URL construction fails
-        return NextResponse.redirect('/login')
-      }
+    // Get the auth cookie
+    const authCookie = request.cookies.get('auth')
+    
+    // If no auth cookie or auth is not true, redirect to login
+    if (!authCookie || authCookie.value !== 'true') {
+      return NextResponse.redirect(new URL('/login', request.url))
     }
   }
 
   return NextResponse.next()
 }
 
+// Configure which routes to run middleware on
 export const config = {
-  matcher: ['/blog/admin/:path*'],
+  matcher: '/blog/admin/:path*'
 } 

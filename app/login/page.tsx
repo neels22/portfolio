@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -12,26 +12,47 @@ export default function LoginPage() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
 
+  // Check if user is already logged in
+  useEffect(() => {
+    const authCookie = document.cookie.split('; ').find(row => row.startsWith('auth='))
+    if (authCookie && authCookie.split('=')[1] === 'true') {
+      router.push('/blog/admin')
+    }
+  }, [router])
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsLoading(true)
 
-    const formData = new FormData(e.currentTarget)
-    const username = formData.get('username')
-    const password = formData.get('password')
+    try {
+      const formData = new FormData(e.currentTarget)
+      const username = formData.get('username')
+      const password = formData.get('password')
 
-    // Check credentials against environment variables
-    if (username === process.env.NEXT_PUBLIC_ADMIN_USERNAME && 
-        password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
-      // Set auth cookie
-      document.cookie = 'auth=true; path=/'
-      toast.success('Login successful')
-      router.push('/blog/admin')
-    } else {
-      toast.error('Invalid credentials')
+      console.log('Login attempt:', { username, password })
+      console.log('Environment variables:', {
+        envUsername: process.env.NEXT_PUBLIC_ADMIN_USERNAME,
+        envPassword: process.env.NEXT_PUBLIC_ADMIN_PASSWORD
+      })
+
+      // Check credentials against environment variables
+      if (username === process.env.NEXT_PUBLIC_ADMIN_USERNAME && 
+          password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
+        // Set auth cookie with expiration (7 days)
+        const expirationDate = new Date()
+        expirationDate.setDate(expirationDate.getDate() + 7)
+        document.cookie = `auth=true; path=/; expires=${expirationDate.toUTCString()}`
+        toast.success('Login successful')
+        router.push('/blog/admin')
+      } else {
+        toast.error('Invalid credentials')
+      }
+    } catch (error) {
+      console.error('Login error:', error)
+      toast.error('An error occurred during login')
+    } finally {
+      setIsLoading(false)
     }
-
-    setIsLoading(false)
   }
 
   return (
