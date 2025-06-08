@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { inter, playfair } from './fonts';
 import "./globals.css";
+import '@/lib/polyfills';
 
 export const metadata: Metadata = {
   title: "Create Next App",
