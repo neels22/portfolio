@@ -20,8 +20,9 @@ export default function LoginPage() {
     const username = formData.get('username')
     const password = formData.get('password')
 
-    // This is a simple demo - in production, use proper authentication
-    if (username === 'admin' && password === 'admin') {
+    // Check credentials against environment variables
+    if (username === process.env.NEXT_PUBLIC_ADMIN_USERNAME && 
+        password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
       // Set auth cookie
       document.cookie = 'auth=true; path=/'
       toast.success('Login successful')
