@@ -26,18 +26,20 @@ export default function LoginPage() {
 
     try {
       const formData = new FormData(e.currentTarget)
-      const username = formData.get('username')
-      const password = formData.get('password')
+      const username = formData.get('username') as string
+      const password = formData.get('password') as string
 
-      console.log('Login attempt:', { username, password })
-      console.log('Environment variables:', {
-        envUsername: process.env.NEXT_PUBLIC_ADMIN_USERNAME,
-        envPassword: process.env.NEXT_PUBLIC_ADMIN_PASSWORD
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
       })
 
-      // Check credentials against environment variables
-      if (username === process.env.NEXT_PUBLIC_ADMIN_USERNAME && 
-          password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
+      const data = await response.json()
+
+      if (response.ok && data.success) {
         // Set auth cookie with expiration (7 days)
         const expirationDate = new Date()
         expirationDate.setDate(expirationDate.getDate() + 7)
@@ -45,7 +47,7 @@ export default function LoginPage() {
         toast.success('Login successful')
         router.push('/blog/admin')
       } else {
-        toast.error('Invalid credentials')
+        toast.error(data.error || 'Invalid credentials')
       }
     } catch (error) {
       console.error('Login error:', error)
