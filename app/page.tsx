@@ -35,13 +35,7 @@ const projects = [
     link: "https://github.com/neels22/Inventory-management",
     images: ["/inventory-1.png", "/inventory-2.png"],
   },
-  {
-    title: "Project Delta",
-    description: "Cloud-based collaboration tool for remote teams",
-    tags: ["Vue.js", "Firebase", "WebRTC"],
-    link: "#",
-    images: [],
-  },
+
 ];
 
 const Index = () => {
