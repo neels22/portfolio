@@ -17,30 +17,30 @@ const projects = [
     description:
       "Restaurant tablebooking platform",
     tags: ["React", "Next-js", "Tailwind-css","springboot","mongodb"],
-    link: "#",
-    image: "",
+    link: "https://github.com/neels22/BookIt",
+    images: ["/Bookit-1.png", "/Bookit-2.png"],
   },
   {
     title: "Eventure",
     description:
       "Event management platform for creating and managing events and booking tickets",
     tags: ["Next-js", "Springboot", "Paypal"],
-    link: "#",
-    image: "",
+    link: "https://github.com/neels22/Eventure-EMA",
+    images: ["/eventure-1.png", "/eventure-2.png"],
   },
   {
     title: "Inventory Management System",
     description: "Inventory management system for a company",
     tags: ["Next-js", "Tailwind-css","Fastapi","PostgreSQL"],
-    link: "#",
-    image: "",
+    link: "https://github.com/neels22/Inventory-management",
+    images: ["/inventory-1.png", "/inventory-2.png"],
   },
   {
     title: "Project Delta",
     description: "Cloud-based collaboration tool for remote teams",
     tags: ["Vue.js", "Firebase", "WebRTC"],
     link: "#",
-    image: "",
+    images: [],
   },
 ];
 
@@ -136,7 +136,7 @@ const Index = () => {
                 title={project.title}
                 description={project.description}
                 tags={project.tags}
-                image={project.image}
+                images={project.images}
                 link={project.link}
                 index={index}
               />

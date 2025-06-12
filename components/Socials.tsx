@@ -1,5 +1,4 @@
-
-import { Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, Mail, NotebookText } from 'lucide-react';
 
 interface SocialLink {
   name: string;
@@ -10,30 +9,41 @@ interface SocialLink {
 const Socials = () => {
   const socialLinks: SocialLink[] = [
     {
+      name: 'Email',
+      url: 'mailto:indraneelsarode@gmail.com',
+      icon: <Mail className="w-4 h-4" />
+    },
+    {
       name: 'GitHub',
-      url: 'https://github.com/',
+      url: 'https://github.com/neels22',
       icon: <Github className="w-4 h-4" />
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/',
+      url: 'https://www.linkedin.com/in/indraneel-sarode-587178206/',
       icon: <Linkedin className="w-4 h-4" />
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/',
+      url: 'https://x.com/SaneWolf91',
       icon: <Twitter className="w-4 h-4" />
     },
     {
       name: 'Instagram',
-      url: 'https://instagram.com/',
+      url: 'https://www.instagram.com/indra.neel_/',
       icon: <Instagram className="w-4 h-4" />
     },
+ 
+    {
+      name:"Medium",
+      url:"https://medium.com/@indraneelsarode22neel",
+      icon:<NotebookText className="w-4 h-4" />
+    }
   ];
 
   return (
     <div className="h-full w-full p-6 bg-white/70 backdrop-blur-md border border-neutral-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in animate-delay-200">
-      <h2 className="text-xl font-semibold text-neutral-900 mb-4">Socials</h2>
+      <h2 className="text-xl font-semibold text-neutral-900 mb-4">LINKS</h2>
       <div className="grid grid-cols-2 gap-2">
         {socialLinks.map((link, index) => (
           <a
