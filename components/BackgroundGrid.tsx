@@ -79,214 +79,215 @@
 // };
 
 // export default BackgroundGrid;
+///////////////////////////////////////////////////////////
 
+// import { useState, useEffect } from 'react';
 
-import { useState, useEffect } from 'react';
+// const BackgroundGrid = () => {
+//   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+//   const [time, setTime] = useState(0);
 
-const BackgroundGrid = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [time, setTime] = useState(0);
+//   useEffect(() => {
+//     const handleMouseMove = (e: MouseEvent) => {
+//       setMousePos({
+//         x: (e.clientX / window.innerWidth) * 100,
+//         y: (e.clientY / window.innerHeight) * 100
+//       });
+//     };
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100
-      });
-    };
+//     const animationTimer = setInterval(() => {
+//       setTime(prev => prev + 1);
+//     }, 50);
 
-    const animationTimer = setInterval(() => {
-      setTime(prev => prev + 1);
-    }, 50);
-
-    window.addEventListener('mousemove', handleMouseMove);
+//     window.addEventListener('mousemove', handleMouseMove);
     
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      clearInterval(animationTimer);
-    };
-  }, []);
+//     return () => {
+//       window.removeEventListener('mousemove', handleMouseMove);
+//       clearInterval(animationTimer);
+//     };
+//   }, []);
 
-  return (
-    <div className="fixed inset-0 z-0 overflow-hidden">
-      {/* Base gradient that shifts with time */}
-      <div 
-        className="absolute inset-0 transition-all duration-1000 ease-out"
-        style={{
-          background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, 
-            rgba(15, 23, 42, 0.9) 0%, 
-            rgba(30, 41, 59, 0.95) 30%, 
-            rgba(51, 65, 85, 0.98) 60%, 
-            rgba(15, 23, 42, 1) 100%)`
-        }}
-      />
+//   return (
+//     <div className="fixed inset-0 z-0 overflow-hidden">
+//       {/* Base gradient that shifts with time */}
+//       <div 
+//         className="absolute inset-0 transition-all duration-1000 ease-out"
+//         style={{
+//           background: `radial-gradient(circle at ${mousePos.x}% ${mousePos.y}%, 
+//             rgba(15, 23, 42, 0.9) 0%, 
+//             rgba(30, 41, 59, 0.95) 30%, 
+//             rgba(51, 65, 85, 0.98) 60%, 
+//             rgba(15, 23, 42, 1) 100%)`
+//         }}
+//       />
 
-      {/* Animated grid that pulses */}
-      <div 
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(148, 163, 184, ${0.1 + Math.sin(time * 0.05) * 0.05}) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(148, 163, 184, ${0.1 + Math.sin(time * 0.05) * 0.05}) 1px, transparent 1px)
-          `,
-          backgroundSize: `${30 + Math.sin(time * 0.03) * 5}px ${30 + Math.sin(time * 0.03) * 5}px`,
-          transform: `translate(${Math.sin(time * 0.02) * 2}px, ${Math.cos(time * 0.02) * 2}px)`
-        }}
-      />
+//       {/* Animated grid that pulses */}
+//       <div 
+//         className="absolute inset-0 opacity-30"
+//         style={{
+//           backgroundImage: `
+//             linear-gradient(to right, rgba(148, 163, 184, ${0.1 + Math.sin(time * 0.05) * 0.05}) 1px, transparent 1px),
+//             linear-gradient(to bottom, rgba(148, 163, 184, ${0.1 + Math.sin(time * 0.05) * 0.05}) 1px, transparent 1px)
+//           `,
+//           backgroundSize: `${30 + Math.sin(time * 0.03) * 5}px ${30 + Math.sin(time * 0.03) * 5}px`,
+//           transform: `translate(${Math.sin(time * 0.02) * 2}px, ${Math.cos(time * 0.02) * 2}px)`
+//         }}
+//       />
 
-      {/* Cyber grid overlay */}
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(0, 255, 255, ${0.2 + Math.sin(time * 0.08) * 0.1}) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 0, 255, ${0.15 + Math.cos(time * 0.08) * 0.1}) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-          transform: `translate(${Math.cos(time * 0.03) * 3}px, ${Math.sin(time * 0.03) * 3}px) rotate(${Math.sin(time * 0.01) * 0.5}deg)`
-        }}
-      />
+//       {/* Cyber grid overlay */}
+//       <div 
+//         className="absolute inset-0 opacity-20"
+//         style={{
+//           backgroundImage: `
+//             linear-gradient(to right, rgba(0, 255, 255, ${0.2 + Math.sin(time * 0.08) * 0.1}) 1px, transparent 1px),
+//             linear-gradient(to bottom, rgba(255, 0, 255, ${0.15 + Math.cos(time * 0.08) * 0.1}) 1px, transparent 1px)
+//           `,
+//           backgroundSize: '50px 50px',
+//           transform: `translate(${Math.cos(time * 0.03) * 3}px, ${Math.sin(time * 0.03) * 3}px) rotate(${Math.sin(time * 0.01) * 0.5}deg)`
+//         }}
+//       />
 
-      {/* Dynamic floating particles */}
-      {[...Array(12)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-60"
-          style={{
-            left: `${20 + (i * 7) + Math.sin(time * 0.02 + i) * 20}%`,
-            top: `${30 + Math.cos(time * 0.015 + i) * 30}%`,
-            transform: `scale(${0.5 + Math.sin(time * 0.03 + i) * 0.5})`,
-            boxShadow: `0 0 ${4 + Math.sin(time * 0.04 + i) * 4}px rgba(0, 255, 255, 0.8)`
-          }}
-        />
-      ))}
+//       {/* Dynamic floating particles */}
+//       {[...Array(12)].map((_, i) => (
+//         <div
+//           key={i}
+//           className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-60"
+//           style={{
+//             left: `${20 + (i * 7) + Math.sin(time * 0.02 + i) * 20}%`,
+//             top: `${30 + Math.cos(time * 0.015 + i) * 30}%`,
+//             transform: `scale(${0.5 + Math.sin(time * 0.03 + i) * 0.5})`,
+//             boxShadow: `0 0 ${4 + Math.sin(time * 0.04 + i) * 4}px rgba(0, 255, 255, 0.8)`
+//           }}
+//         />
+//       ))}
 
-      {/* Scanning beam effect */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: `linear-gradient(
-            ${90 + Math.sin(time * 0.01) * 45}deg,
-            transparent 0%,
-            rgba(0, 255, 255, 0.03) 45%,
-            rgba(0, 255, 255, 0.08) 50%,
-            rgba(0, 255, 255, 0.03) 55%,
-            transparent 100%
-          )`,
-          transform: `translateX(${Math.sin(time * 0.008) * 100}px)`
-        }}
-      />
+//       {/* Scanning beam effect */}
+//       <div 
+//         className="absolute inset-0 pointer-events-none"
+//         style={{
+//           background: `linear-gradient(
+//             ${90 + Math.sin(time * 0.01) * 45}deg,
+//             transparent 0%,
+//             rgba(0, 255, 255, 0.03) 45%,
+//             rgba(0, 255, 255, 0.08) 50%,
+//             rgba(0, 255, 255, 0.03) 55%,
+//             transparent 100%
+//           )`,
+//           transform: `translateX(${Math.sin(time * 0.008) * 100}px)`
+//         }}
+//       />
 
-      {/* Mouse-following glow */}
-      <div 
-        className="absolute w-96 h-96 pointer-events-none transition-all duration-300 ease-out"
-        style={{
-          left: `${mousePos.x}%`,
-          top: `${mousePos.y}%`,
-          transform: 'translate(-50%, -50%)',
-          background: `radial-gradient(circle, 
-            rgba(100, 116, 139, 0.15) 0%, 
-            rgba(0, 255, 255, 0.05) 40%, 
-            transparent 70%
-          )`,
-          filter: `blur(${2 + Math.sin(time * 0.05) * 1}px)`
-        }}
-      />
+//       {/* Mouse-following glow */}
+//       <div 
+//         className="absolute w-96 h-96 pointer-events-none transition-all duration-300 ease-out"
+//         style={{
+//           left: `${mousePos.x}%`,
+//           top: `${mousePos.y}%`,
+//           transform: 'translate(-50%, -50%)',
+//           background: `radial-gradient(circle, 
+//             rgba(100, 116, 139, 0.15) 0%, 
+//             rgba(0, 255, 255, 0.05) 40%, 
+//             transparent 70%
+//           )`,
+//           filter: `blur(${2 + Math.sin(time * 0.05) * 1}px)`
+//         }}
+//       />
 
-      {/* Leather texture with subtle animation */}
-      <div 
-        className="absolute inset-0 opacity-30 mix-blend-overlay"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='${1.5 + Math.sin(time * 0.04) * 0.3}'/%3E%3Ccircle cx='10' cy='10' r='${0.8 + Math.sin(time * 0.06) * 0.2}'/%3E%3Ccircle cx='50' cy='20' r='${1.2 + Math.cos(time * 0.05) * 0.3}'/%3E%3Ccircle cx='20' cy='50' r='${0.9 + Math.sin(time * 0.07) * 0.2}'/%3E%3C/g%3E%3C/svg%3E")`,
-          transform: `translate(${Math.sin(time * 0.01) * 2}px, ${Math.cos(time * 0.01) * 2}px)`
-        }}
-      />
+//       {/* Leather texture with subtle animation */}
+//       <div 
+//         className="absolute inset-0 opacity-30 mix-blend-overlay"
+//         style={{
+//           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='${1.5 + Math.sin(time * 0.04) * 0.3}'/%3E%3Ccircle cx='10' cy='10' r='${0.8 + Math.sin(time * 0.06) * 0.2}'/%3E%3Ccircle cx='50' cy='20' r='${1.2 + Math.cos(time * 0.05) * 0.3}'/%3E%3Ccircle cx='20' cy='50' r='${0.9 + Math.sin(time * 0.07) * 0.2}'/%3E%3C/g%3E%3C/svg%3E")`,
+//           transform: `translate(${Math.sin(time * 0.01) * 2}px, ${Math.cos(time * 0.01) * 2}px)`
+//         }}
+//       />
 
-      {/* Ambient color waves */}
-      <div className="absolute inset-0 opacity-40">
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: `radial-gradient(
-              ellipse at ${30 + Math.sin(time * 0.02) * 20}% ${40 + Math.cos(time * 0.015) * 30}%,
-              rgba(59, 130, 246, 0.1) 0%,
-              transparent 60%
-            )`
-          }}
-        />
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: `radial-gradient(
-              ellipse at ${70 + Math.cos(time * 0.025) * 20}% ${60 + Math.sin(time * 0.02) * 30}%,
-              rgba(147, 51, 234, 0.08) 0%,
-              transparent 60%
-            )`
-          }}
-        />
-      </div>
+//       {/* Ambient color waves */}
+//       <div className="absolute inset-0 opacity-40">
+//         <div 
+//           className="absolute inset-0"
+//           style={{
+//             background: `radial-gradient(
+//               ellipse at ${30 + Math.sin(time * 0.02) * 20}% ${40 + Math.cos(time * 0.015) * 30}%,
+//               rgba(59, 130, 246, 0.1) 0%,
+//               transparent 60%
+//             )`
+//           }}
+//         />
+//         <div 
+//           className="absolute inset-0"
+//           style={{
+//             background: `radial-gradient(
+//               ellipse at ${70 + Math.cos(time * 0.025) * 20}% ${60 + Math.sin(time * 0.02) * 30}%,
+//               rgba(147, 51, 234, 0.08) 0%,
+//               transparent 60%
+//             )`
+//           }}
+//         />
+//       </div>
 
-      {/* Energy pulses from corners */}
-      <div 
-        className="absolute top-0 left-0 w-32 h-32 pointer-events-none"
-        style={{
-          background: `radial-gradient(circle, 
-            rgba(0, 255, 255, ${0.15 + Math.sin(time * 0.06) * 0.1}) 0%, 
-            transparent 70%
-          )`,
-          transform: `scale(${1 + Math.sin(time * 0.04) * 0.3})`
-        }}
-      />
-      <div 
-        className="absolute bottom-0 right-0 w-32 h-32 pointer-events-none"
-        style={{
-          background: `radial-gradient(circle, 
-            rgba(255, 0, 255, ${0.12 + Math.cos(time * 0.07) * 0.08}) 0%, 
-            transparent 70%
-          )`,
-          transform: `scale(${1 + Math.cos(time * 0.05) * 0.25})`
-        }}
-      />
+//       {/* Energy pulses from corners */}
+//       <div 
+//         className="absolute top-0 left-0 w-32 h-32 pointer-events-none"
+//         style={{
+//           background: `radial-gradient(circle, 
+//             rgba(0, 255, 255, ${0.15 + Math.sin(time * 0.06) * 0.1}) 0%, 
+//             transparent 70%
+//           )`,
+//           transform: `scale(${1 + Math.sin(time * 0.04) * 0.3})`
+//         }}
+//       />
+//       <div 
+//         className="absolute bottom-0 right-0 w-32 h-32 pointer-events-none"
+//         style={{
+//           background: `radial-gradient(circle, 
+//             rgba(255, 0, 255, ${0.12 + Math.cos(time * 0.07) * 0.08}) 0%, 
+//             transparent 70%
+//           )`,
+//           transform: `scale(${1 + Math.cos(time * 0.05) * 0.25})`
+//         }}
+//       />
 
-      {/* Depth layers */}
-      <div 
-        className="absolute inset-0 opacity-60"
-        style={{
-          background: `linear-gradient(
-            ${45 + Math.sin(time * 0.005) * 15}deg,
-            transparent 0%,
-            rgba(0, 0, 0, 0.1) 50%,
-            transparent 100%
-          )`
-        }}
-      />
+//       {/* Depth layers */}
+//       <div 
+//         className="absolute inset-0 opacity-60"
+//         style={{
+//           background: `linear-gradient(
+//             ${45 + Math.sin(time * 0.005) * 15}deg,
+//             transparent 0%,
+//             rgba(0, 0, 0, 0.1) 50%,
+//             transparent 100%
+//           )`
+//         }}
+//       />
 
-      {/* Status indicators */}
-      <div className="absolute top-4 right-4 flex space-x-2 z-10">
-        <div 
-          className="w-2 h-2 bg-cyan-400 rounded-full"
-          style={{
-            opacity: 0.4 + Math.sin(time * 0.1) * 0.4,
-            boxShadow: `0 0 ${4 + Math.sin(time * 0.1) * 4}px rgba(0, 255, 255, 0.6)`
-          }}
-        />
-        <div 
-          className="w-2 h-2 bg-purple-400 rounded-full"
-          style={{
-            opacity: 0.4 + Math.cos(time * 0.08) * 0.4,
-            boxShadow: `0 0 ${4 + Math.cos(time * 0.08) * 4}px rgba(147, 51, 234, 0.6)`
-          }}
-        />
-      </div>
-    </div>
-  );
-};
+//       {/* Status indicators */}
+//       <div className="absolute top-4 right-4 flex space-x-2 z-10">
+//         <div 
+//           className="w-2 h-2 bg-cyan-400 rounded-full"
+//           style={{
+//             opacity: 0.4 + Math.sin(time * 0.1) * 0.4,
+//             boxShadow: `0 0 ${4 + Math.sin(time * 0.1) * 4}px rgba(0, 255, 255, 0.6)`
+//           }}
+//         />
+//         <div 
+//           className="w-2 h-2 bg-purple-400 rounded-full"
+//           style={{
+//             opacity: 0.4 + Math.cos(time * 0.08) * 0.4,
+//             boxShadow: `0 0 ${4 + Math.cos(time * 0.08) * 4}px rgba(147, 51, 234, 0.6)`
+//           }}
+//         />
+//       </div>
+//     </div>
+//   );
+// };
 
-export default BackgroundGrid;
-
-
+// export default BackgroundGrid;
 
 
+
+
+///////////////////////////////////////////////////////////
 
 
 
@@ -545,3 +546,59 @@ export default BackgroundGrid;
 // };
 
 // export default BackgroundGrid;
+
+
+
+///////////////////////////////////////////////////////////
+
+import React from 'react';
+
+const PastelGridBackgroundDarker = () => {
+  const gridSize = 40;
+  const numCircles = 7;
+
+  return (
+    <div className="fixed inset-0 z-0 overflow-hidden">
+      {/* Darker pastel gradient background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `linear-gradient(to bottom, #cfd0dc, #b998cf, #89a9cc)`
+        }}
+      />
+
+      {/* Grid overlay with darker tone */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+  linear-gradient(to right, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+  linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 1px, transparent 1px)
+`,
+
+          backgroundSize: `${gridSize}px ${gridSize}px`,
+        }}
+      />
+
+      {/* Concentric semi-circles */}
+      <svg className="absolute inset-0 w-full h-full">
+        {[...Array(numCircles)].map((_, i) => {
+          const radius = (i + 1) * 60;
+          return (
+            <circle
+              key={i}
+              cx="50%"
+              cy="50%"
+              r={radius}
+              stroke="rgba(255,255,255,0.25)"
+              strokeWidth="1"
+              fill="none"
+            />
+          );
+        })}
+      </svg>
+    </div>
+  );
+};
+
+export default PastelGridBackgroundDarker;

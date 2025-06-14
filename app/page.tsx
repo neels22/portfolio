@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import BackgroundGrid from "@/components/BackgroundGrid";
+// import BackgroundGrid from "@/components/BackgroundGrid";
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
 import Socials from "@/components/Socials";
@@ -10,6 +10,7 @@ import Contact from "@/components/Contact";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
 import { ArrowUpRight } from "lucide-react";
+import PastelGridBackgroundDarker from "@/components/BackgroundGrid";
 
 const projects = [
   {
@@ -74,7 +75,7 @@ const Index = () => {
 
   return (
     <>
-      <BackgroundGrid />
+      <PastelGridBackgroundDarker />
 
       <div
         ref={contentRef}
