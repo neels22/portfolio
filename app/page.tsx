@@ -87,7 +87,7 @@ const Index = () => {
           <div className="md:col-span-2 space-y-6">
             <Hero
               name="Indraneel"
-              title="Software Engineer & Design Enthusiast"
+              title="Software Engineer and Masters student"
             />
 
             {/* Socials & About side by side on small+ screens */}
