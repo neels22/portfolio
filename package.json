@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate",
-    "create-admin": "node scripts/create-admin.js"
+    "create-admin": "node scripts/create-admin.js",
+    "create-sample-post": "node scripts/create-sample-post.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -33,6 +34,7 @@
     "@radix-ui/react-tooltip": "^1.2.0",
     "@tanstack/react-query": "^5.72.2",
     "@types/bcryptjs": "^2.4.6",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "bcryptjs": "^3.0.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -49,7 +51,9 @@
     "react-hook-form": "^7.55.0",
     "react-icons": "^5.5.0",
     "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^15.6.1",
     "recharts": "^2.15.2",
+    "remark-gfm": "^4.0.1",
     "sonner": "^2.0.3",
     "tailwind-merge": "^3.3.0",
     "zod": "^3.24.2"

@@ -117,6 +117,44 @@ export default function AdminPage() {
               onChange={handleChange}
               required
               className="min-h-[300px]"
+              placeholder={`# Welcome to Your Blog Post
+
+## Introduction
+
+This is a **bold** word and *italic* word. You can also use ~~strikethrough~~ text.
+
+### Key Points
+
+- List item 1
+- List item 2
+- List item 3
+
+1. Ordered item 1
+2. Ordered item 2
+3. Ordered item 3
+
+> This is a blockquote that will be styled beautifully.
+
+---
+
+### Code Examples
+
+Inline code: \`console.log('Hello World')\`
+
+Code blocks:
+\`\`\`javascript
+function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+\`\`\`
+
+### Links
+
+[Visit our website](https://example.com)
+
+---
+
+Your content will be rendered with beautiful Medium-style formatting!`}
             />
           </div>
 
