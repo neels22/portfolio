@@ -12,33 +12,10 @@ import Footer from "@/components/Footer";
 import { ArrowUpRight } from "lucide-react";
 import PastelGridBackgroundDarker from "@/components/BackgroundGrid";
 import Link from "next/link";
+import { allProjects } from "@/components/all-projects";
 
-const projects = [
-  {
-    title: "BookIt",
-    description:
-      "Restaurant tablebooking platform",
-    tags: ["React", "Next-js", "Tailwind-css","springboot","mongodb"],
-    link: "https://github.com/neels22/BookIt",
-    images: ["/Bookit-1.png", "/Bookit-2.png"],
-  },
-  {
-    title: "Eventure",
-    description:
-      "Event management platform for creating and managing events and booking tickets",
-    tags: ["Next-js", "Springboot", "Paypal"],
-    link: "https://github.com/neels22/Eventure-EMA",
-    images: ["/eventure-1.png", "/eventure-2.png"],
-  },
-  {
-    title: "Inventory Management System",
-    description: "Inventory management system for a company",
-    tags: ["Next-js", "Tailwind-css","Fastapi","PostgreSQL"],
-    link: "https://github.com/neels22/Inventory-management",
-    images: ["/inventory-1.png", "/inventory-2.png"],
-  },
+const projects = allProjects;
 
-];
 
 const Index = () => {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -104,7 +81,7 @@ const Index = () => {
           <div className="md:col-span-1">
             <Skills />
             <Contact />
-
+    
           </div>
         </div>
 
@@ -126,7 +103,7 @@ const Index = () => {
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {projects.map((project, index) => (
+            {projects.slice(0, 4).map((project, index) => (
               <ProjectCard
                 key={project.title}
                 title={project.title}

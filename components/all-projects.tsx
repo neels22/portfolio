@@ -5,7 +5,7 @@ import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import PastelGridBackgroundDarker from "@/components/BackgroundGrid";
 
-const allProjects = [
+export const allProjects = [
   {
     title: "BookIt",
     description: "Restaurant table booking platform with real-time availability and reservation management",
