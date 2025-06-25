@@ -11,6 +11,7 @@ import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
 import { ArrowUpRight } from "lucide-react";
 import PastelGridBackgroundDarker from "@/components/BackgroundGrid";
+import Link from "next/link";
 
 const projects = [
   {
@@ -116,13 +117,13 @@ const Index = () => {
         <div className="animate-fade-in animate-delay-200 opacity-0 translate-y-5 transition-all duration-500">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-neutral-800">Projects</h2>
-            <a
-              href="#all-projects"
+            <Link
+              href="/all-projects"
               className="text-sm font-medium text-neutral-800 hover:text-neutral-900 transition-colors flex items-center gap-1"
             >
               View all
               <ArrowUpRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {projects.map((project, index) => (
