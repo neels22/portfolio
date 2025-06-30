@@ -28,7 +28,7 @@ export const allProjects = [
     images: ["/inventory-1.png", "/inventory-2.png"],
   },
   {
-    title: "E-Commerce Platform",
+    title: "coming soon",
     description: "Full-stack e-commerce solution with payment integration and admin dashboard",
     tags: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
     link: "https://github.com/neels22/ecommerce-platform",
