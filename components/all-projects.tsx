@@ -7,6 +7,13 @@ import PastelGridBackgroundDarker from "@/components/BackgroundGrid";
 
 export const allProjects = [
   {
+    title: "AI Trip Planner",
+    description: "AI Trip Planner Agent with real-time weather updates, itinerary suggestions and budget calculator",
+    tags: ["LangGraph", "FastAPI","Streamlit"],
+    link: "https://github.com/neels22/Ai_Trip_Planner",
+    images: ["/ai-trip.png", "/ai-trip.png"],
+  },
+  {
     title: "BookIt",
     description: "Restaurant table booking platform with real-time availability and reservation management",
     tags: ["React", "Next-js", "Tailwind-css", "Springboot", "MongoDB"],
@@ -14,26 +21,22 @@ export const allProjects = [
     images: ["/Bookit-1.png", "/Bookit-2.png"],
   },
   {
+    title: "Inventory Management System",
+    description: "Inventory management system for a company with real-time tracking and reporting and MCP-Server-Client integration",
+    tags: ["Next-js", "Tailwind-css", "Fastapi", "PostgreSQL","MCP-Server-Client"],
+    link: "https://github.com/neels22/Inventory-management",
+    images: ["/inventory-1.png", "/inventory-2.png"],
+  },
+  
+  {
     title: "Eventure",
     description: "Event management platform for creating and managing events and booking tickets",
     tags: ["Next-js", "Springboot", "Paypal"],
     link: "https://github.com/neels22/Eventure-EMA",
     images: ["/eventure-1.png", "/eventure-2.png"],
   },
-  {
-    title: "Inventory Management System",
-    description: "Inventory management system for a company with real-time tracking and reporting",
-    tags: ["Next-js", "Tailwind-css", "Fastapi", "PostgreSQL"],
-    link: "https://github.com/neels22/Inventory-management",
-    images: ["/inventory-1.png", "/inventory-2.png"],
-  },
-  {
-    title: "coming soon",
-    description: "Full-stack e-commerce solution with payment integration and admin dashboard",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-    link: "https://github.com/neels22/ecommerce-platform",
-    images: ["/placeholder.svg", "/placeholder.svg"],
-  },
+ 
+ 
   {
     title: "Task Management App",
     description: "Collaborative task management application with real-time updates and team features",
@@ -48,20 +51,7 @@ export const allProjects = [
     link: "https://github.com/neels22/weather-dashboard",
     images: ["/placeholder.svg", "/placeholder.svg"],
   },
-  {
-    title: "Blog Platform",
-    description: "Modern blog platform with markdown support, comments, and user authentication",
-    tags: ["Next-js", "Prisma", "PostgreSQL", "NextAuth"],
-    link: "https://github.com/neels22/blog-platform",
-    images: ["/placeholder.svg", "/placeholder.svg"],
-  },
-  {
-    title: "Portfolio Website",
-    description: "Personal portfolio website with modern design and smooth animations",
-    tags: ["Next-js", "Tailwind-css", "Framer Motion", "TypeScript"],
-    link: "https://github.com/neels22/portfolio",
-    images: ["/placeholder.svg", "/placeholder.svg"],
-  },
+  
 ];
 
 const AllProjects = () => {
