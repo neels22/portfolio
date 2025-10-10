@@ -7,12 +7,13 @@ import PastelGridBackgroundDarker from "@/components/BackgroundGrid";
 
 export const allProjects = [
   {
-    title: "AI Trip Planner",
-    description: "AI Trip Planner Agent with real-time weather updates, itinerary suggestions and budget calculator",
-    tags: ["LangGraph", "FastAPI","Streamlit"],
-    link: "https://github.com/neels22/Ai_Trip_Planner",
-    images: ["/ai-trip.png", "/ai-trip.png"],
+    title: "Perplexity-2.0",
+    description: "Perplexity-2.0 is a chatbot that can answer questions and Search the web for you",
+    tags: ["LangGraph", "FastAPI","Next-js","Gemini"],
+    link: "https://perplexity.indraneelsarode.com",
+    images: ["/perplexity-1.png", "/perplexity-2.png"],
   },
+ 
   {
     title: "BookIt",
     description: "Restaurant table booking platform with real-time availability and reservation management",
@@ -34,6 +35,13 @@ export const allProjects = [
     tags: ["Next-js", "Springboot", "Paypal"],
     link: "https://github.com/neels22/Eventure-EMA",
     images: ["/eventure-1.png", "/eventure-2.png"],
+  },
+  {
+    title: "AI Trip Planner",
+    description: "AI Trip Planner Agent with real-time weather updates, itinerary suggestions and budget calculator",
+    tags: ["LangGraph", "FastAPI","Streamlit"],
+    link: "https://github.com/neels22/Ai_Trip_Planner",
+    images: ["/ai-trip.png", "/ai-trip.png"],
   },
  
  
