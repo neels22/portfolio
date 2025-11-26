@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Instagram, Mail, NotebookText } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, Mail, NotebookText, FileText } from 'lucide-react';
 
 interface SocialLink {
   name: string;
@@ -8,6 +8,11 @@ interface SocialLink {
 
 const Socials = () => {
   const socialLinks: SocialLink[] = [
+    {
+      name: 'Resume',
+      url: 'https://drive.google.com/file/d/1BNAQ4znxmKehU4quu1nXuYjR0AVhur9q/view?usp=drive_link',
+      icon: <FileText className="w-4 h-4" />
+    },
     {
       name: 'Email',
       url: 'mailto:indraneelsarode@gmail.com',
@@ -43,7 +48,7 @@ const Socials = () => {
 
   return (
     <div className="h-full w-full p-6 bg-white/70 backdrop-blur-md border border-neutral-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in animate-delay-200">
-      <h2 className="text-xl font-semibold text-neutral-900 mb-4">LINKS</h2>
+      <h2 className="text-xl font-semibold text-neutral-900 mb-4">Links</h2>
       <div className="grid grid-cols-2 gap-2">
         {socialLinks.map((link, index) => (
           <a
