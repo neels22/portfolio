@@ -1,4 +1,3 @@
-import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 
 interface HeroProps {
@@ -22,15 +21,6 @@ const Hero = ({ name, title }: HeroProps) => {
           <p className="text-lg text-neutral-600">
             {title}
           </p>
-          <div className="pt-2">
-            <a 
-              href="#about" 
-              className="inline-flex items-center text-sm font-medium text-neutral-900 hover:text-neutral-700 transition-colors"
-            >
-              Learn more
-              <ArrowUpRight className="ml-1 h-3.5 w-3.5" />
-            </a>
-          </div>
         </div>
         <div className="flex-shrink-0 flex justify-center items-center w-full sm:w-auto mt-4 sm:mt-0">
           <Image
