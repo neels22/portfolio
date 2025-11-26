@@ -45,20 +45,7 @@ export const allProjects = [
   },
  
  
-  {
-    title: "Task Management App",
-    description: "Collaborative task management application with real-time updates and team features",
-    tags: ["Vue.js", "Firebase", "Tailwind-css", "Socket.io"],
-    link: "https://github.com/neels22/task-manager",
-    images: ["/placeholder.svg", "/placeholder.svg"],
-  },
-  {
-    title: "Weather Dashboard",
-    description: "Real-time weather dashboard with location-based forecasts and interactive maps",
-    tags: ["React", "TypeScript", "OpenWeather API", "Chart.js"],
-    link: "https://github.com/neels22/weather-dashboard",
-    images: ["/placeholder.svg", "/placeholder.svg"],
-  },
+  
   
 ];
 
@@ -109,18 +96,18 @@ const AllProjects = () => {
           <div className="flex items-center gap-4 mb-6">
             <Link
               href="/"
-              className="flex items-center gap-2 text-neutral-700 hover:text-neutral-900 transition-colors group"
+              className="flex items-center gap-2 text-neutral-900 hover:text-neutral-700 transition-colors group font-semibold"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              <span className="text-sm font-medium">Back to Home</span>
+              <span className="text-sm font-semibold">Back to Home</span>
             </Link>
           </div>
           
           <div className="text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-800">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900">
               All Projects
             </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-800 max-w-2xl mx-auto font-semibold">
               A comprehensive collection of my work, showcasing various technologies and problem-solving approaches
             </p>
           </div>
@@ -128,7 +115,7 @@ const AllProjects = () => {
 
         {/* Projects Grid */}
         <div className="animate-fade-in animate-delay-200 opacity-0 translate-y-5 transition-all duration-500">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {allProjects.map((project, index) => (
               <ProjectCard
                 key={project.title}
@@ -146,27 +133,19 @@ const AllProjects = () => {
         {/* Footer Section */}
         <div className="animate-fade-in animate-delay-400 opacity-0 translate-y-5 transition-all duration-500">
           <div className="text-center space-y-4 pt-8 border-t border-neutral-200/50">
-            <p className="text-neutral-600">
-              Interested in collaborating or have a project in mind?
+            <p className="text-neutral-800 font-semibold">
+              Connect with me on GitHub
             </p>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center">
               <a
                 href="https://github.com/neels22"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-neutral-700 hover:text-neutral-900 transition-colors group"
+                className="flex items-center gap-2 text-neutral-900 hover:text-neutral-700 transition-colors group font-semibold"
               >
                 <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium">GitHub</span>
+                <span className="text-sm font-semibold">GitHub</span>
               </a>
-              <span className="text-neutral-400">•</span>
-              <Link
-                href="/#contact"
-                className="flex items-center gap-2 text-neutral-700 hover:text-neutral-900 transition-colors group"
-              >
-                <ExternalLink className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm font-medium">Get in Touch</span>
-              </Link>
             </div>
           </div>
         </div>

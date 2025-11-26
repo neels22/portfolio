@@ -32,7 +32,7 @@ const ImageSlideshow = ({ images }: { images: string[] }) => {
   }
 
   return (
-    <div className="aspect-video relative overflow-hidden">
+    <div className="relative overflow-hidden rounded-t-2xl h-56 sm:h-64 lg:h-72">
       {images.map((image, index) => (
         <img
           key={image}
@@ -52,21 +52,21 @@ const ProjectCard = ({ title, description, tags, images, link, index }: ProjectC
   return (
     <a 
       href={link}
-      className="group block aspect-[9/16] overflow-hidden bg-white/70 backdrop-blur-md border border-neutral-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 card-hover animate-fade-in"
+      className="group block overflow-hidden bg-white/70 backdrop-blur-md border border-neutral-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 card-hover animate-fade-in"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="h-full flex flex-col">
         <ImageSlideshow images={images} />
         
-        <div className="p-4 flex-1 flex flex-col">
-          <div className="flex justify-between items-start mb-2">
-            <h3 className="font-medium text-neutral-900 group-hover:text-neutral-700 transition-colors">{title}</h3>
-            <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-neutral-900 transition-colors" />
+        <div className="p-6 flex-1 flex flex-col">
+          <div className="flex justify-between items-start mb-3">
+            <h3 className="text-lg font-semibold text-neutral-900 group-hover:text-neutral-700 transition-colors">{title}</h3>
+            <ArrowUpRight className="w-5 h-5 text-neutral-400 group-hover:text-neutral-900 transition-colors" />
           </div>
-          <p className="text-xs text-neutral-600 mb-auto line-clamp-3">{description}</p>
+          <p className="text-sm text-neutral-800 mb-auto leading-relaxed line-clamp-3">{description}</p>
           <div className="mt-4 flex flex-wrap gap-1">
             {tags.map((tag) => (
-              <span key={tag} className="text-[10px] px-3 py-2 bg-neutral-100 text-neutral-900 rounded-2xl">
+              <span key={tag} className="text-xs px-3 py-1.5 bg-neutral-100 text-neutral-800 rounded-2xl">
                 {tag}
               </span>
             ))}
