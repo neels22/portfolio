@@ -93,10 +93,10 @@ const Index = () => {
         {/* Projects Section */}
         <div className="animate-fade-in animate-delay-200 opacity-0 translate-y-5 transition-all duration-500">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-neutral-800">Projects</h2>
+            <h2 className="text-2xl font-bold text-neutral-50">Projects</h2>
             <Link
               href="/all-projects"
-              className="text-lg font-semibold text-neutral-800 hover:text-neutral-900 transition-colors flex items-center gap-1"
+              className="text-lg font-semibold text-neutral-100 hover:text-white transition-colors flex items-center gap-1"
             >
               View all
               <ArrowUpRight className="w-4 h-4" />

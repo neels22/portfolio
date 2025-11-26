@@ -96,7 +96,7 @@ const AllProjects = () => {
           <div className="flex items-center gap-4 mb-6">
             <Link
               href="/"
-              className="flex items-center gap-2 text-neutral-900 hover:text-neutral-700 transition-colors group font-semibold"
+              className="flex items-center gap-2 text-neutral-100 hover:text-white transition-colors group font-semibold"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               <span className="text-sm font-semibold">Back to Home</span>
@@ -104,10 +104,10 @@ const AllProjects = () => {
           </div>
           
           <div className="text-center space-y-4">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-900">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-neutral-50">
               All Projects
             </h1>
-            <p className="text-lg text-neutral-800 max-w-2xl mx-auto font-semibold">
+            <p className="text-lg text-neutral-200 max-w-2xl mx-auto font-semibold">
               A comprehensive collection of my work, showcasing various technologies and problem-solving approaches
             </p>
           </div>
@@ -132,8 +132,8 @@ const AllProjects = () => {
 
         {/* Footer Section */}
         <div className="animate-fade-in animate-delay-400 opacity-0 translate-y-5 transition-all duration-500">
-          <div className="text-center space-y-4 pt-8 border-t border-neutral-200/50">
-            <p className="text-neutral-800 font-semibold">
+          <div className="text-center space-y-4 pt-8 border-t border-neutral-200/30">
+            <p className="text-neutral-200 font-semibold">
               Connect with me on GitHub
             </p>
             <div className="flex items-center justify-center">
@@ -141,7 +141,7 @@ const AllProjects = () => {
                 href="https://github.com/neels22"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-neutral-900 hover:text-neutral-700 transition-colors group font-semibold"
+                className="flex items-center gap-2 text-neutral-100 hover:text-white transition-colors group font-semibold"
               >
                 <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-semibold">GitHub</span>
