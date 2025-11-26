@@ -96,13 +96,13 @@ const Index = () => {
             <h2 className="text-2xl font-bold text-neutral-800">Projects</h2>
             <Link
               href="/all-projects"
-              className="text-sm font-medium text-neutral-800 hover:text-neutral-900 transition-colors flex items-center gap-1"
+              className="text-lg font-semibold text-neutral-800 hover:text-neutral-900 transition-colors flex items-center gap-1"
             >
               View all
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
             {projects.slice(0, 4).map((project, index) => (
               <ProjectCard
                 key={project.title}
