@@ -1,4 +1,4 @@
-import { ArrowUpRight, ChevronDown, Code, Database, Brain, BarChart3 } from "lucide-react";
+import { ChevronDown, Code, Database, Brain, BarChart3 } from "lucide-react";
 import { useState } from "react";
 
 const Leadership = () => {
@@ -37,9 +37,6 @@ const Leadership = () => {
         <h2 className="text-xl font-semibold text-neutral-900">
           Experience/Internship
         </h2>
-        <span className="text-neutral-400 group-hover:text-neutral-700 transition-colors">
-          <ArrowUpRight className="w-5 h-5" />
-        </span>
       </div>
       
       <div className="mt-4 space-y-3">
