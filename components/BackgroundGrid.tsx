@@ -571,17 +571,17 @@ const PastelGridBackgroundDarker = () => {
 
       {/* Grid overlay with darker tone */}
       <div className="absolute inset-0 blur-[3px]">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
   linear-gradient(to right, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
   linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 1px, transparent 1px)
 `,
 
-            backgroundSize: `${gridSize}px ${gridSize}px`,
-          }}
-        />
+          backgroundSize: `${gridSize}px ${gridSize}px`,
+        }}
+      />
       </div>
 
       {/* Concentric semi-circles */}
