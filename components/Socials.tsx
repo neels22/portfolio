@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Instagram, Mail, NotebookText, FileText } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, Mail, NotebookText, FileText, Code2 } from 'lucide-react';
 
 interface SocialLink {
   name: string;
@@ -13,10 +13,16 @@ const Socials = () => {
       url: 'https://drive.google.com/file/d/1BNAQ4znxmKehU4quu1nXuYjR0AVhur9q/view?usp=drive_link',
       icon: <FileText className="w-4 h-4" />
     },
+
     {
       name: 'Email',
       url: 'mailto:indraneelsarode@gmail.com',
       icon: <Mail className="w-4 h-4" />
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/indraneel-sarode-587178206/',
+      icon: <Linkedin className="w-4 h-4" />
     },
     {
       name: 'GitHub',
@@ -24,10 +30,11 @@ const Socials = () => {
       icon: <Github className="w-4 h-4" />
     },
     {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/indraneel-sarode-587178206/',
-      icon: <Linkedin className="w-4 h-4" />
+      name: 'LeetCode',
+      url: 'https://leetcode.com/u/indraneel_sarode/',
+      icon: <Code2 className="w-4 h-4" />
     },
+
     {
       name: 'Twitter',
       url: 'https://x.com/SaneWolf91',
