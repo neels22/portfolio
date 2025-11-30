@@ -20,14 +20,7 @@ export const allProjects = [
     link: "https://perplexity.indraneelsarode.com",
     images: ["/perplexity-1.png", "/perplexity-2.png"],
   },
- 
-  {
-    title: "BookIt",
-    description: "Restaurant table booking platform with real-time availability and reservation management",
-    tags: ["React", "Next-js", "Tailwind-css", "Springboot", "MongoDB"],
-    link: "https://github.com/neels22/BookIt",
-    images: ["/Bookit-1.png", "/Bookit-2.png"],
-  },
+
   {
     title: "Inventory Management System",
     description: "Inventory management system for a company with real-time tracking and reporting and MCP-Server-Client integration",
@@ -35,6 +28,15 @@ export const allProjects = [
     link: "https://github.com/neels22/Inventory-management",
     images: ["/inventory-1.png", "/inventory-2.png"],
   },
+ 
+  {
+    title: "BookIt (Team Project)",
+    description: "Restaurant table booking platform with real-time availability and reservation management",
+    tags: ["React", "Next-js", "Tailwind-css", "Springboot", "MongoDB"],
+    link: "https://github.com/neels22/BookIt",
+    images: ["/Bookit-1.png", "/Bookit-2.png"],
+  },
+
   {
     title: "Transitly (Hackathon Project)",
     description: "AWS Hackathon project that automates moving paperwork. Enter your addresses and dates; Transitly plans tasks and autofills forms (USPS, utilities, ISP) with your approval, keeping an auditable checklist.",
@@ -50,7 +52,7 @@ export const allProjects = [
     images: ["/safeguard-ai.png"],
   },
   {
-    title: "Eventure",
+    title: "Eventure (Team Project)",
     description: "Event management platform for creating and managing events and booking tickets",
     tags: ["Next-js", "Springboot", "Paypal"],
     link: "https://github.com/neels22/Eventure-EMA",
