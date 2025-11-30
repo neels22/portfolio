@@ -102,8 +102,8 @@ const Index = () => {
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-            {projects.slice(0, 4).map((project, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {projects.slice(0, 6).map((project, index) => (
               <ProjectCard
                 key={project.title}
                 title={project.title}

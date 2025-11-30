@@ -14,6 +14,20 @@ export const allProjects = [
     images: ["/snapask.gif"],
   },
   {
+    title: "Transitly (Hackathon Project)",
+    description: "AWS Hackathon project that automates moving paperwork. Enter your addresses and dates; Transitly plans tasks and autofills forms (USPS, utilities, ISP) with your approval, keeping an auditable checklist.",
+    tags: ["LangGraph", "FastAPI", "React", "DynamoDB", "AWS Cognito", "Nova Act"],
+    link: "https://github.com/neels22/Transitly",
+    images: ["/transitly.png", "/transitly2.png"],
+  },
+  {
+    title: "Safeguard AI (Hackathon Project)",
+    description: "AI-powered video intelligence for law enforcement. Ask natural-language questions about incident videos and get instant, timestamped, explainable answers with frame-level analysis.",
+    tags: ["FastAPI", "React", "TypeScript", "MongoDB", "LangChain", "LangGraph", "OpenAI GPT-4", "Gemini"],
+    link: "https://github.com/Mongo-db-hackathon/safeguard-ai",
+    images: ["/safeguard-ai.png"],
+  },
+  {
     title: "Perplexity-2.0",
     description: "Perplexity-2.0 is a chatbot that can answer questions and Search the web for you",
     tags: ["LangGraph", "FastAPI","Next-js","Gemini"],
