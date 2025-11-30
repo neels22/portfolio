@@ -7,6 +7,13 @@ import PastelGridBackgroundDarker from "@/components/BackgroundGrid";
 
 export const allProjects = [
   {
+    title: "SnapAsk",
+    description: "An AI-powered screenshot assistant for macOS. Capture any part of your screen with a global shortcut, then ask questions about it using multimodal AI.",
+    tags: ["Electron.js", "React", "LLMs", "SQLite"],
+    link: "https://github.com/neels22/SnapAsk",
+    images: ["/snapask.gif"],
+  },
+  {
     title: "Perplexity-2.0",
     description: "Perplexity-2.0 is a chatbot that can answer questions and Search the web for you",
     tags: ["LangGraph", "FastAPI","Next-js","Gemini"],
