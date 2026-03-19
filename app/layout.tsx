@@ -6,6 +6,9 @@ import '@/lib/polyfills';
 export const metadata: Metadata = {
   title: "Indraneel Sarode",
   description: "Indraneel Sarode's personal website",
+  other: {
+    "color-scheme": "light only",
+  },
 };
 
 export default function RootLayout({
