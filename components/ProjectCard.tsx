@@ -25,8 +25,8 @@ const ImageSlideshow = ({ images }: { images: string[] }) => {
 
   if (images.length === 0) {
     return (
-      <div className="aspect-video bg-gradient-to-br from-neutral-100 to-neutral-200 flex items-center justify-center">
-        <span className="text-neutral-400 font-medium">Image</span>
+      <div className="aspect-video bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center">
+        <span className="text-neutral-500 font-medium">Image</span>
       </div>
     );
   }
@@ -52,7 +52,7 @@ const ProjectCard = ({ title, description, tags, images, link, index }: ProjectC
   return (
     <a 
       href={link}
-      className="group block overflow-hidden bg-white/70 backdrop-blur-md border border-neutral-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 card-hover animate-fade-in"
+      className="group block overflow-hidden bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 card-hover animate-fade-in"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="h-full flex flex-col">
@@ -60,13 +60,13 @@ const ProjectCard = ({ title, description, tags, images, link, index }: ProjectC
         
         <div className="p-6 flex-1 flex flex-col">
           <div className="flex justify-between items-start mb-3">
-            <h3 className="text-lg font-semibold text-neutral-900 group-hover:text-neutral-700 transition-colors">{title}</h3>
-            <ArrowUpRight className="w-5 h-5 text-neutral-400 group-hover:text-neutral-900 transition-colors" />
+            <h3 className="text-lg font-semibold text-neutral-50 group-hover:text-white transition-colors">{title}</h3>
+            <ArrowUpRight className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
           </div>
-          <p className="text-sm text-neutral-800 mb-auto leading-relaxed line-clamp-3">{description}</p>
+          <p className="text-sm text-neutral-300 mb-auto leading-relaxed line-clamp-3">{description}</p>
           <div className="mt-4 flex flex-wrap gap-1">
             {tags.map((tag) => (
-              <span key={tag} className="text-xs px-3 py-1.5 bg-neutral-100 text-neutral-800 rounded-2xl">
+              <span key={tag} className="text-xs px-3 py-1.5 bg-white/15 text-neutral-200 rounded-2xl">
                 {tag}
               </span>
             ))}

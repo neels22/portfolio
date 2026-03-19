@@ -7,18 +7,18 @@ interface HeroProps {
 
 const Hero = ({ name, title }: HeroProps) => {
   return (
-    <div className="group w-full p-6 bg-white/70 backdrop-blur-md border border-neutral-200 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md animate-fade-in">
+    <div className="group w-full p-6 bg-white/10 backdrop-blur-md border border-white/15 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md animate-fade-in">
       <div className="flex flex-col-reverse sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8">
         <div className="flex flex-col space-y-2 flex-1">
           <div className="inline-flex items-center mb-1">
-            <span className="text-xs font-medium px-2 py-0.5 bg-neutral-100 text-neutral-700 rounded-full">
+            <span className="text-xs font-medium px-2 py-0.5 bg-white/15 text-neutral-200 rounded-full">
               Portfolio
             </span>
           </div>
-          <h1 className="text-3xl font-bold text-neutral-900 tracking-tight text-balance group-hover:text-neutral-800 transition-colors">
+          <h1 className="text-3xl font-bold text-neutral-50 tracking-tight text-balance group-hover:text-white transition-colors">
             Hi, I am {name}
           </h1>
-          <p className="text-lg text-neutral-600">
+          <p className="text-lg text-neutral-300">
             {title}
           </p>
         </div>
