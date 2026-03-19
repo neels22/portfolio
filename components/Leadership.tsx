@@ -35,11 +35,35 @@ const Leadership = () => {
     <div className="group w-full md:w-3/3 p-6 bg-white/70 backdrop-blur-md border border-neutral-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in animate-delay-200">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-semibold text-neutral-900">
-          Experience/Internship
+          Experience
         </h2>
       </div>
       
       <div className="mt-4 space-y-3">
+        <div className="bg-neutral-50 border border-neutral-300 rounded-md p-4">
+          {/* Company Header */}
+          <div className="flex items-center justify-between mb-3">
+            <div>
+              <div className="text-lg font-bold text-neutral-800">
+                Microsoft
+              </div>
+              <div className="text-neutral-900 font-semibold">Incoming SWE Intern</div>
+            </div>
+            <div className="bg-neutral-200 text-neutral-800 px-3 py-1 rounded-full text-sm font-medium border border-neutral-300">
+              May 2026 – Aug 2026
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <div className="text-sm font-semibold text-neutral-900">
+              Incoming SWE Intern — Collaborative Apps & Platforms (SharePoint & OneDrive)
+            </div>
+            <p className="text-xs text-neutral-700">
+              Summer 2026 (May 2026 – Aug 2026)
+            </p>
+          </div>
+        </div>
+
         <div className="bg-neutral-50 border border-neutral-300 rounded-md p-4">
           {/* Company Header */}
           <div className="flex items-center justify-between mb-3">
