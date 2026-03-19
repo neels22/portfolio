@@ -1,5 +1,5 @@
 const About = () => {
-  const highlights = ["Master's in SE", "Distributed Systems", "LLM Apps", "Summer 2026"];
+  const highlights = ["Master's in SE", "Distributed Systems", "LLM Apps", "SWE Intern @ Microsoft"];
   const values = ["Clean Code", "Architecture", "Learning"];
 
   return (
@@ -20,8 +20,8 @@ const About = () => {
 
       {/* Main Description */}
       <p className="text-neutral-800 text-sm mb-3 leading-relaxed">
-        <span className="font-semibold text-neutral-900">Seeking summer internship</span> to apply expertise in 
-        distributed systems, full-stack development, and LLM applications to real-world challenges.
+        <span className="font-semibold text-neutral-900">SWE Intern at Microsoft</span> with expertise in 
+        distributed systems, full-stack development, and LLM applications.
       </p>
 
       {/* Values */}
