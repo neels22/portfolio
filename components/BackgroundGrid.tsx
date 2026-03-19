@@ -555,52 +555,122 @@
 
 import React from 'react';
 
-const PastelGridBackgroundDarker = () => {
-  const gridSize = 40;
-  const numCircles = 7;
+// const PastelGridBackgroundDarker = () => {
+//   const gridSize = 40;
+//   const numCircles = 7;
+//
+//   return (
+//     <div className="fixed inset-0 z-0 overflow-hidden">
+//       <div
+//         className="absolute inset-0"
+//         style={{
+//           background: `linear-gradient(to bottom, #1f3b73, #405e9c, #7ea8c7)`
+//         }}
+//       />
+//       <div className="absolute inset-0 blur-[3px]">
+//       <div
+//         className="absolute inset-0"
+//         style={{
+//           backgroundImage: `
+//   linear-gradient(to right, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+//   linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 1px, transparent 1px)
+// `,
+//           backgroundSize: `${gridSize}px ${gridSize}px`,
+//         }}
+//       />
+//       </div>
+//       <svg className="absolute inset-0 w-full h-full">
+//         {[...Array(numCircles)].map((_, i) => {
+//           const radius = (i + 1) * 60;
+//           return (
+//             <circle
+//               key={i}
+//               cx="50%"
+//               cy="50%"
+//               r={radius}
+//               stroke="rgba(255,255,255,0.25)"
+//               strokeWidth="1"
+//               fill="none"
+//             />
+//           );
+//         })}
+//       </svg>
+//     </div>
+//   );
+// };
 
+const PastelGridBackgroundDarker = () => {
   return (
     <div className="fixed inset-0 z-0 overflow-hidden">
-      {/* Darker pastel gradient background */}
+      <div className="absolute inset-0 bg-black" />
+
       <div
-        className="absolute inset-0"
+        className="absolute pointer-events-none"
         style={{
-          background: `linear-gradient(to bottom, #1f3b73, #405e9c, #7ea8c7)`
+          top: '-20%',
+          left: '-10%',
+          width: '70%',
+          height: '80%',
+          background: 'radial-gradient(ellipse at center, rgba(0, 80, 220, 0.55) 0%, rgba(0, 50, 180, 0.3) 30%, transparent 70%)',
+          filter: 'blur(60px)',
         }}
       />
 
-      {/* Grid overlay with darker tone */}
-      <div className="absolute inset-0 blur-[3px]">
       <div
-        className="absolute inset-0"
+        className="absolute pointer-events-none"
         style={{
-          backgroundImage: `
-  linear-gradient(to right, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
-  linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 1px, transparent 1px)
-`,
-
-          backgroundSize: `${gridSize}px ${gridSize}px`,
+          top: '10%',
+          right: '-15%',
+          width: '65%',
+          height: '100%',
+          background: 'radial-gradient(ellipse at center, rgba(0, 210, 210, 0.45) 0%, rgba(0, 160, 200, 0.25) 30%, transparent 70%)',
+          filter: 'blur(80px)',
         }}
       />
-      </div>
 
-      {/* Concentric semi-circles */}
-      <svg className="absolute inset-0 w-full h-full">
-        {[...Array(numCircles)].map((_, i) => {
-          const radius = (i + 1) * 60;
-          return (
-            <circle
-              key={i}
-              cx="50%"
-              cy="50%"
-              r={radius}
-              stroke="rgba(255,255,255,0.25)"
-              strokeWidth="1"
-              fill="none"
-            />
-          );
-        })}
-      </svg>
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          bottom: '-10%',
+          right: '0%',
+          width: '50%',
+          height: '60%',
+          background: 'radial-gradient(ellipse at center, rgba(0, 200, 220, 0.35) 0%, transparent 60%)',
+          filter: 'blur(70px)',
+        }}
+      />
+
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0.7) 0%, transparent 70%)',
+        }}
+      />
+
+      <div
+        className="absolute inset-0 pointer-events-none opacity-50 mix-blend-soft-light"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '256px 256px',
+        }}
+      />
+
+      <div
+        className="absolute inset-0 pointer-events-none opacity-30 mix-blend-overlay"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '200px 200px',
+        }}
+      />
+
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.4) 100%)',
+        }}
+      />
     </div>
   );
 };
