@@ -58,9 +58,6 @@ const Leadership = () => {
             <div className="text-sm font-semibold text-neutral-900">
               Incoming SWE Intern — Collaborative Apps & Platforms (SharePoint & OneDrive)
             </div>
-            <p className="text-xs text-neutral-700">
-              Summer 2026 (May 2026 – Aug 2026)
-            </p>
           </div>
         </div>
 
