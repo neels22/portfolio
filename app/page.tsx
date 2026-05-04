@@ -7,6 +7,7 @@ import Socials from "@/components/Socials";
 import About from "@/components/About";
 import Leadership from "@/components/Leadership";
 import Contact from "@/components/Contact";
+import Highlights from "@/components/Highlights";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
 import { ArrowUpRight } from "lucide-react";
@@ -81,7 +82,7 @@ const Index = () => {
           <div className="md:col-span-1">
             <Skills />
             <Contact />
-    
+            <Highlights />
           </div>
         </div>
 
